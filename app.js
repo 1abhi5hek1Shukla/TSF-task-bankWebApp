@@ -35,7 +35,7 @@ app.use(function(req,res,next){
 });
 
 
-seedDB();
+// seedDB();
 
 
 app.get("/", (req,res)=>{
