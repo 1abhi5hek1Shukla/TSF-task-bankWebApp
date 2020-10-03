@@ -1,0 +1,51 @@
+<%- include("./partials/header")%>
+<div class="container">
+	<div class="row content">
+		<div class=" col-sm-3 sidenav">
+			<ul class=" nav nav-pills nav-stacked">
+				<li><a href="/customers/<%=cCustomer._id%>">Info</a></li>
+		        <li class="active"><a href="/customers/<%=cCustomer._id%>/transfer">Money Transfer</a></li>
+				<li><a href="/customers">Other Customers</a></li>
+			</ul>
+		</div>
+		<div class="col-sm-9">
+			<h1>Transfer Page of <%=cCustomer.name%></h1>
+			<div class="well">
+				<p style="font-family:monospace;font-size: 20px">You have <%=cCustomer.currentBalance%> <em>Rs</em></p>
+			</div>
+			<div style="margin: 25px auto;">
+				<form action="/customers/<%=cCustomer._id%>/transfer?_method=PUT" method="POST">
+				  	<div class="form-group">
+					  	<label for="customers">Choose a Customer to transfer money :</label><br>
+					  	<select style="width: 100%; " id="customers" name="cID">
+					  		<% tCustomers.forEach((c)=>{ %>
+							    <option value= <%=c._id%>><%=c.name%></option>  		
+						  		<%})%>
+					  	</select>
+				  	</div>
+				  	<div class="form-group">
+				  		<label for="ammount">Enter the Ammount : </label><br>
+					  	<input style="width: 100%;" id = ammount type="number" name="ammount" min="0" step="0.01" placeholder="0.00"> 
+				  	</div>
+				  	<div class="form-group" >
+					  	<input class="btn btn-md btn-block btn-primary" type="submit">
+				  	</div>
+				</form>
+			</div>
+			<!-- <div class="row content">
+				<div class="col-sm-6">
+					<a class = "btn btn-primary btnsTransfer" href="/customers/<%=cCustomer._id%>">Go back</a>
+				</div>
+				<div class="col-sm-6">
+					<a class = "btn btn-primary btnsTransfer" href="/customers/<%=cCustomer._id%>">Go back</a>
+				</div>
+			</div> -->
+		</div>
+	</div>
+</div>
+
+
+
+
+
+<%- include("./partials/footer")%>

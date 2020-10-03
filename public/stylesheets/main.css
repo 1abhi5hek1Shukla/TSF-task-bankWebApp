@@ -1,0 +1,6 @@
+.btnsTransfer{	
+	width: 100%
+}
+.btnsTransfer:hover{
+	background-color: green;	
+}

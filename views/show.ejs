@@ -1,0 +1,43 @@
+<%- include("./partials/header")%>
+
+<div class="container">
+	<div class="row content">
+		<div class=" col-sm-3 sidenav">
+			<ul class=" nav nav-pills nav-stacked">
+				<li class="active"><a href="/customers/<%=customer._id%>">Info</a></li>
+		        <li><a href="/customers/<%=customer._id%>/transfer">Money Transfer</a></li>
+				<li><a href="/customers">Other Customers</a></li>
+			</ul>
+		</div>
+		<div class="col-sm-9">
+			<h1>Welcome <%=customer.name%></h1>
+			
+			<table class="table table-striped">
+			  <tbody>
+			  	<tr>
+			      <td>Name</td>
+			      <td><%=customer.name%></td>
+			    </tr>
+			    <tr>
+			      <td>Email</td>
+			      <td><%=customer.email%></td>
+			    </tr>
+			    <tr>
+			      <td>Current Balance</td>
+			      <td><%=customer.currentBalance%> Rs.</td>
+			    </tr> 
+			  </tbody>
+			</table>
+		<div class="row content">
+			<div class="col-sm-6">
+				<a class = "btn btn-primary btnsTransfer" href="/customers/<%=customer._id%>/transfer">Transfer Money</a>
+			</div>
+			<div class="col-sm-6">
+				<a class = "btn btn-primary btnsTransfer" href="/customers/<%=customer._id%>">Go back</a>
+			</div>
+		</div>
+		</div>
+	</div>
+</div>
+
+<%- include("./partials/footer")%>

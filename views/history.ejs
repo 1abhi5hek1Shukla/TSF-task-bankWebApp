@@ -1,0 +1,44 @@
+<%- include("./partials/header")%>
+
+<div class="container">
+	<div class="row content">
+		<div class=" col-sm-3 sidenav">
+			<ul class=" nav nav-pills nav-stacked">
+				<li><a href="/home">Home</a></li>
+		        <li><a href="/customers">View all Customers</a></li>
+		        <li class="active"><a href="/history">Transaction History</a></li>
+			</ul>
+		</div>
+		<div class="col-sm-9">
+			<div class="row">
+				<div class="col-md-12">
+					<h1>Transaction History</h1>
+					<% if (history.length === 0) { -%>
+						<p>NO transactions so far...</p>
+					<% }else{ -%>
+							<table class="table table-striped">
+							  	<thead>
+							  		<th>From</th>
+							  		<th>To</th>
+							  		<th>Ammount</th>
+							  		<th>Date</th>
+							  	</thead>
+							  <tbody>
+							  <%history.forEach((ele)=>{ %>
+							  		<tr>
+								      <td><%=ele.from%></td>
+								      <td><%=ele.to%></td>
+								      <td><%=ele.ammount%></td>
+								      <td><%= moment(ele.date)%></td>
+								    </tr>
+								<%});%>
+							  </tbody>
+							</table>
+					<% } -%>	
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<%- include("./partials/footer")%>
