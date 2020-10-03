@@ -39,11 +39,11 @@ app.use(function(req,res,next){
 
 
 app.get("/", (req,res)=>{
-	res.render("landing");
+	res.render("home",{effect:1});
 });
 
 app.get("/home",(req,res)=>{
-	res.render("home");
+	res.render("home",{effect:0});
 });
 
 app.get("/customers",(req,res)=>{
