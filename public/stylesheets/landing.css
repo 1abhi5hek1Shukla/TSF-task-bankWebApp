@@ -58,8 +58,10 @@
     opacity:1;
   }
 }
-
 .fadein{
+  font-family: 'Patua One', cursive;
+  font-size: 50px;
+  color:black;
   opacity: 0;
   animation: fadeIn 1s ease-in forwards;
 }
